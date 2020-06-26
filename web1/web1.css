@@ -1,0 +1,484 @@
+body {
+   margin: 0;
+   padding: 0;
+   text-align: center;
+}
+.fw_large {
+   font-weight: 600;
+}
+.fs_small {
+   font-size: 12px;
+}
+/* 一番上の固定うまくできない */
+header {
+   width: 100%;
+   height: 75px;
+   /* position: fixed; */
+}
+.head {
+   width: 100%;
+   height: 35px;
+   max-width: calc(100%-20px);
+   padding: 20px 0;
+   /* position: relative; */
+   background-color: white;
+   display: flex;
+}
+.head img {
+   width: 128px;
+   object-fit: cover;
+}
+.head p {
+   text-align: bottom;
+}
+.head button {
+   text-decoration: none;
+   color: white;
+   background-color: #d84940;
+   margin: 0 0 0 auto;
+} 
+.head a {
+   text-decoration: none;
+}
+.main {
+   width: 100%;
+   max-width: calc(100%-20px);
+   padding: 40px 0;
+   background-size: cover;
+} 
+.main1 {
+   text-align: center;
+   background-image: url(https://isara.life/wp-content/themes/isara_v2/img/main.jpg);
+   object-fit: cover;
+   /* position: absolute;
+   top: 50px; */
+}
+.main1 p {
+   margin: 0;
+}
+.main1 div {
+   padding: 30px 0 100px 0;
+}
+/* ？　ツイートのとこどうつくるの画像貼り方とか */
+.main2 {
+   background-color: rgb(235, 185, 77);;
+   color: white;
+   font-size: 16px;
+   font-weight: 600;
+}
+.main2 .p1 {
+   width: auto;
+   background-color: white;
+   color: #d84940;
+   border-radius: 6px;
+   margin: 10px auto;
+
+   /* ？　箱が文字の大きさになってくれない */
+   display: inline-block;
+   /* この1行で解決 */
+}
+.main2 .p2 {
+   background-color: #da6b64;
+   width: 615px;
+   height: 30px;
+   padding: 25px 50px;
+   margin: 10px auto;
+   border-radius: 40px;
+}
+.main2 .p2 a {
+   text-decoration: none;
+   color: white;
+   align-items: center;
+}
+.main2 .p2:hover {
+   background-color: #d84940;
+}
+.main2 .p3 {
+   margin: 30px;
+   font-size: 19px;
+}
+.main2 .container li {
+   display: inline-block;
+   background-color: skyblue;
+   border-radius: 6px;
+}
+.main3 {
+   background-image: url(https://isara.life/wp-content/themes/isara_v2/img/introbottom.jpg);
+   font-size:16px;
+   font-weight:300;
+}
+.main3 h1 {
+   font-size: 24px;
+   font-weight: 600;
+   border: solid 4px orange;
+   padding: 40px;
+   margin: 40px;
+}
+.main3 span {
+   font-weight: bold;
+   border-bottom: solid 5px orange;
+   display: inline-block;
+   line-height: 10px;
+   /* ？　ちょっと上にやるのどうするの */
+   /* inline-blockでできた */
+}
+.about {
+   width: 80px;
+   height: 80px;
+   background-color: orange;
+   color: white;
+   border-radius: 50%;
+   margin: 0 auto;
+   line-height: 80px;
+}
+.main4 {
+   background-color: papayawhip;
+   font-size: 16px;
+   font-weight: 600;
+}
+.main4 h2 {
+   border: solid 4px orange;
+   padding: 20px;
+   margin: 20px;
+}
+.main4_box {
+   background-color: white;
+   margin: 20px;
+   padding: 10px;
+   border: solid 2px orange;
+}
+.main4_box ul {
+   padding: 10px;
+   align-items: center;
+   display: flex;
+   list-style: none;
+}
+/* ？　字の部分の上そろってるのじみちにやるの */
+.main4_box li {
+   width: 20%;
+   margin: 0;
+   font-size: 12px;
+   font-weight: 300;
+}
+.main5 {
+   /* background-color: silver; */
+   background-image: url(https://isara.life/wp-content/themes/isara_v2/img/aboutsecondbg.jpg);
+   color: white;
+}
+.main5 span {
+   color: yellow;
+}
+.main5_box {
+   width: 40%;
+   background-color: white;
+   color: black;
+   margin: 20px auto;
+   padding: 20px;
+   border-radius: 6px;
+}
+.main5_box div {
+   background-color: orange;
+   color: white;
+   width: 90%;
+   margin: 10px auto 30px auto;
+   border-radius: 6px;
+}
+.main5_box p {
+   font-size: 12px;
+   font-weight: 600;
+}
+.main5_box .p1 {
+   font-size: 14px;
+}
+.main6 {
+   background-color: rgb(1, 110, 169);
+   color: white;
+}
+.main6 span {
+   color: orange;
+}
+/* ？　画像の扱い方わからない */
+.main7 ul {
+   display: flex;
+   list-style: none;
+   padding: 0;
+   width: 20%;
+}
+.main7 li {
+   margin: 0 auto;
+}
+.main7 p {
+   margin: 0;
+}
+.main8 {
+   background-color: wheat;
+} 
+.main8 .container {
+   margin: 0 100px;
+}
+.main8 img {
+   width: 300px;
+   height: 180px;
+   object-fit: cover;
+}
+.main8 .img_title {
+   color: orange;
+}
+/* ？　左に寄ってくれない */
+.main8 .img_title p {
+   text-align: left;
+}
+.main8 .box {
+   padding: 40px 10px;
+   background-color: white;
+   border: solid 2px orange;
+   border-radius: 6px;
+   font-size: 16px;
+   font-weight: 600;
+   margin: 40px 0;
+}
+.main8 .box_title {
+   font-size: 24px;
+   color: orange;
+}
+.main8 .p1 {
+   font-size: 14px;
+   font-weight: 650;
+}
+.main8 .p2 {
+   font-size: 12px;
+}
+.main9 {
+   background-image: url(https://isara.life/wp-content/themes/isara_v2/img/teacherbg.jpg);
+   color: white;
+}
+.main9 .container {
+   margin: 0 50px;
+}
+.main9_img {
+   border-radius: 50%;
+   /* ？　重ねるのどうやるの */
+   line-height: 100px;
+}
+.main9 .box {
+   padding: 20px;
+   border: solid 4px white;
+}
+.main10 {
+   background-color: rgb(235, 185, 77);
+   color: white;
+}
+.main10 .circle {
+   width: 80px;
+   height: 80px;
+   line-height: 80px;
+   font-size: 20px;
+   margin: 0 auto;
+   border-radius: 50%;
+   background-color: white;
+   color: orange;
+}
+.main10 .box {
+   font-size: 18px;
+   font-weight: 600;
+   border: solid 3px white;
+   margin: 10px;
+}
+.main11 .box {
+   color: grey;
+   display: flex;
+   font-size: 20px;
+}
+.main11 .img {
+   width: 220px;
+   height: 220px;
+   background-color: silver;
+   border: solid 1px orange;
+   margin: 20px;
+}
+.main11 .box div {
+   margin: 15px 0;
+   text-align: left;
+}
+.main11 .p1 {
+   line-height: 15px;
+   display: inline-block;
+   border-bottom: solid 2px grey;
+}
+.main12 {
+   background-image: url(https://isara.life/wp-content/themes/isara_v2/img/classbg.jpg);
+   color: white;
+}
+.main12 .box {
+   background-color: white;
+   width: 80%;
+   margin: 10px auto;
+   border: solid 2px rgb(1, 110, 169);
+   border-radius: 6px;
+}
+.main12 .box h1 {
+   font-size: medium;
+   margin: 0;
+   padding: 20px;
+   background-color: rgb(1, 110, 169);
+   color: white;
+}
+.main12 ul {
+   padding: 0;
+   margin: 0;
+   list-style: none;
+}
+.main12 li {
+   color: black;
+   font-weight: 600;
+   padding: 10px;
+   border-bottom: dashed 1px silver;
+}
+.main13 {
+   background-color: rgb(1, 110, 169);
+   color: white;
+   font-weight: 600;
+   padding: 30px 0;
+}
+.main14 > img {
+   width: 90%;
+   margin: 20px 0;
+}
+.main14 .container {
+   display: flex;
+   width: 80%;
+   margin: 20px auto;
+   background-color: rgb(254, 245, 224);;
+}
+.main14 .box1 {
+   width: 30%;
+   margin: 20px;
+   font-size: 20px;
+   font-weight: 600;
+}
+.main14 .box2 {
+   width : 70%;
+   text-align: left;
+   margin: 20px;
+   font-size: 14px;
+}
+.main14 .box2 .p1 {
+   font-weight: 600;
+}
+.main14 .box2 .p2 {
+   font-size: 12px;
+}
+.main15 {
+   background-image: url(https://isara.life/wp-content/themes/isara_v2/img/bangkokbg.jpg);
+   color: white;
+   text-align: left;
+}
+.main15 .container {
+   margin: 20px 40px;
+}
+.main15 li {
+   font-weight: 600;
+}
+.main16 {
+   background-color: rgb(247, 194, 60);
+}
+.main16 span {
+   color: white;
+}
+
+/* ？　かぶらせるやつまた保留 */
+
+.main16 .container {
+   border: solid 2px white;
+   padding: 20px;
+   margin: 0 40px;
+} 
+/* 本家の白丸は写真ぽいからあきらめ */
+.main16 .box {
+   width: 220px;
+   height: 220px;
+   margin: 0 auto;
+   background-color: white;
+   border-radius: 50%;
+}
+.main16 .box h2 {
+   color: orange;
+}
+.main17 {
+   background-image: url(https://isara.life/wp-content/themes/isara_v2/img/specialdetail.jpg);
+   color: white;
+}
+.main17 div {
+   font-size: 24px;
+   font-weight: 600;
+   border: solid 3px;
+   width: 90%;
+   margin: 0 auto;
+}
+.main18 .container {
+   text-align: left;
+   margin: 20px;
+   font-size: 15px;
+}
+.main18 ul {
+   margin: 30px 0;
+}
+.main19 {
+   background-color: rgb(235, 185, 77);;
+   display: inline-block;
+}
+.main19 li {
+   list-style: none;
+}
+.main19 input {
+   width: 60%;
+   height: 50px;
+   border-radius: 5px;
+   padding: 5px;
+   margin-bottom: 25px;
+   border: none;
+}
+.main19 textarea {
+   width: 60%;
+   height: 100px;
+   border-radius: 5px;
+   padding: 5px;
+   margin-bottom: 25px;
+   border: none;
+}
+.main20 li {
+   list-style: none;
+   text-align: left;
+   width: 80%;
+   margin: 2px auto;
+   padding: 15px 10px;
+   border: solid 1px silver;
+}
+footer {
+   width: 100%;
+   max-width: calc(100%-20px);
+   background-color: rgb(236, 236, 236);
+   padding: 20px 0;
+}
+footer ul {
+   padding: 0;
+   width: 100%;
+   /* display: flex; */
+   margin: 0 auto;
+}
+footer  li {
+   list-style: none;
+   background-color: skyblue;
+   color: white;
+   margin: 5px;
+   display: inline-block;
+   border-radius: 6px;
+}
+footer a {
+   text-decoration: none;
+   color: blue;
+}
+footer a:hover {
+   border-bottom: solid 1px blue;
+   line-height: 0;
+}
