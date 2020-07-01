@@ -9,49 +9,114 @@ body {
 .fs_small {
    font-size: 12px;
 }
+.fs10 {
+   font-size: 10px;
+}
+.br_sp {
+   display: none;
+}
+.sp_navbar {
+   display: none;
+}
+.sp_navbar .box > img {
+   width: 90px;
+}
+.sp_navbar .button {
+   display: block;
+   background-color: #da6b64;
+   margin-left: auto;
+   width: 54px;
+   padding: 9px 11px;
+}
+.sp_navbar .button img {
+   width: 20px;
+}
+.sp_navbar a {
+   text-decoration: none;
+   color: white;
+   font-size: 12px;
+   margin: auto;
+   display: block;
+   /* aはinlineだからblockにしないと親要素block指定しても縦にならない */
+}
 /* 一番上の固定うまくできない */
-header {
+.navbar, .sp_navbar {
    width: 100%;
    height: 75px;
-   /* position: fixed; */
+   position: fixed;
 }
-.head {
+.navbar .head {
    width: 100%;
    height: 35px;
    max-width: calc(100%-20px);
    padding: 20px 0;
-   /* position: relative; */
    background-color: white;
    display: flex;
 }
-.head img {
+.sp_navbar .head {
+   width: 100%;
+   height: 62px;
+   max-width: calc(100%-20px);
+   padding: 0;
+   background-color: white;
+   display: flex;
+}
+.sp_navbar .box {
+   margin-top: 15px;
+   text-align: left;
+}
+.sp_navbar .head p {
+   margin: 0;
+}
+.navbar .head img {
    width: 128px;
    object-fit: cover;
 }
-.head p {
+.navbar .head p {
    text-align: bottom;
 }
-.head button {
+.navbar .head button {
+   /* ボタン初期値リセット */
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+   outline: none;
+   padding: 0;
+   appearance: none;
+   /* ここまで */
+   text-decoration: none;
+   background-color: #da6b64;
+   margin: 0 0 0 auto;
+   padding: 10px 40px;
+   border-radius: 20px;
+}
+.navbar .head button:hover {
+   background-color: #d84940;
+} 
+.navbar .head a {
    text-decoration: none;
    color: white;
-   background-color: #d84940;
-   margin: 0 0 0 auto;
-} 
-.head a {
-   text-decoration: none;
 }
 .main {
    width: 100%;
    max-width: calc(100%-20px);
    padding: 40px 0;
    background-size: cover;
+   /* background-size: contain; */
+   background-repeat: no-repeat;
+   /* ？　これで縮めても一緒に小さくなってくれないの */
+   background-position: center;
+   /* display: table; */
 } 
 .main1 {
+   width:100%;
    text-align: center;
    background-image: url(https://isara.life/wp-content/themes/isara_v2/img/main.jpg);
    object-fit: cover;
    /* position: absolute;
-   top: 50px; */
+   top: 75px; */
+   padding-top: 75px;
+   /* こっちでいい */
 }
 .main1 p {
    margin: 0;
@@ -59,7 +124,6 @@ header {
 .main1 div {
    padding: 30px 0 100px 0;
 }
-/* ？　ツイートのとこどうつくるの画像貼り方とか */
 .main2 {
    background-color: rgb(235, 185, 77);;
    color: white;
@@ -79,13 +143,14 @@ header {
 }
 .main2 .p2 {
    background-color: #da6b64;
-   width: 615px;
+   width: 80%;
    height: 30px;
    padding: 25px 50px;
    margin: 10px auto;
    border-radius: 40px;
 }
 .main2 .p2 a {
+   width: 50%;
    text-decoration: none;
    color: white;
    align-items: center;
@@ -97,16 +162,24 @@ header {
    margin: 30px;
    font-size: 19px;
 }
+ul {
+   padding: 0;
+}
 .main2 .container li {
    display: inline-block;
    background-color: skyblue;
    border-radius: 6px;
 }
+.fab {
+   padding: 0 5px;
+}
 .main3 {
    background-image: url(https://isara.life/wp-content/themes/isara_v2/img/introbottom.jpg);
    font-size:16px;
    font-weight:300;
+   padding-bottom: 160px;
 }
+
 .main3 h1 {
    font-size: 24px;
    font-weight: 600;
@@ -121,8 +194,10 @@ header {
    line-height: 10px;
    /* ？　ちょっと上にやるのどうするの */
    /* inline-blockでできた */
+   /* text-decoration: underline  orange; */
 }
 .about {
+   z-index: 2;
    width: 80px;
    height: 80px;
    background-color: orange;
@@ -130,8 +205,13 @@ header {
    border-radius: 50%;
    margin: 0 auto;
    line-height: 80px;
+   position: absolute;
+   top: -40px;
+   left: 50%;
+   transform:translateX(-50%);
 }
 .main4 {
+   position: relative;
    background-color: papayawhip;
    font-size: 16px;
    font-weight: 600;
@@ -141,27 +221,42 @@ header {
    padding: 20px;
    margin: 20px;
 }
+img {
+   width: auto;
+   height: auto;
+   max-width: 100%;
+   max-height: 100%;
+}
 .main4_box {
    background-color: white;
    margin: 20px;
    padding: 10px;
    border: solid 2px orange;
+   display: inline-block;
 }
 .main4_box ul {
    padding: 10px;
    align-items: center;
    display: flex;
+   flex-wrap: wrap;
+   /* ？　縮めてったとき折り返してくれない */
+   /* ボックスの指定をpxでできた */
    list-style: none;
 }
 /* ？　字の部分の上そろってるのじみちにやるの */
+/* 画像の高さを指定してできた */
 .main4_box li {
-   width: 20%;
+   width: 135px;
+   height: 115px;
    margin: 0;
    font-size: 12px;
    font-weight: 300;
 }
+.main4_box ul li img {
+   width: auto;
+   height: 65px;
+}
 .main5 {
-   /* background-color: silver; */
    background-image: url(https://isara.life/wp-content/themes/isara_v2/img/aboutsecondbg.jpg);
    color: white;
 }
@@ -198,11 +293,11 @@ header {
    color: orange;
 }
 /* ？　画像の扱い方わからない */
+/* listはjustify-content aline-items で指定 */
 .main7 ul {
    display: flex;
+   justify-content: space-evenly;
    list-style: none;
-   padding: 0;
-   width: 20%;
 }
 .main7 li {
    margin: 0 auto;
@@ -210,11 +305,17 @@ header {
 .main7 p {
    margin: 0;
 }
+.main7 img {
+   width: 180px;
+   height: auto;
+   max-width: 100%;
+   max-height: 100%;
+}
 .main8 {
    background-color: wheat;
 } 
 .main8 .container {
-   margin: 0 100px;
+   margin: 0 auto;
 }
 .main8 img {
    width: 300px;
@@ -224,8 +325,9 @@ header {
 .main8 .img_title {
    color: orange;
 }
-/* ？　左に寄ってくれない */
-.main8 .img_title p {
+.main8 .explain {
+   width: 80%;
+   margin: 0 auto;
    text-align: left;
 }
 .main8 .box {
@@ -258,11 +360,16 @@ header {
 .main9_img {
    border-radius: 50%;
    /* ？　重ねるのどうやるの */
+   /* マージんのマイナス指定 */
    line-height: 100px;
 }
 .main9 .box {
    padding: 20px;
    border: solid 4px white;
+   margin-top:-40px;
+}
+.main9 .box p {
+   text-align: left;
 }
 .main10 {
    background-color: rgb(235, 185, 77);
@@ -303,7 +410,8 @@ header {
 .main11 .p1 {
    line-height: 15px;
    display: inline-block;
-   border-bottom: solid 2px grey;
+   /* border-bottom: solid 2px grey; */
+   text-decoration: underline;
 }
 .main12 {
    background-image: url(https://isara.life/wp-content/themes/isara_v2/img/classbg.jpg);
@@ -316,7 +424,7 @@ header {
    border: solid 2px rgb(1, 110, 169);
    border-radius: 6px;
 }
-.main12 .box h1 {
+.main12 .box h2 {
    font-size: medium;
    margin: 0;
    padding: 20px;
@@ -339,6 +447,12 @@ header {
    color: white;
    font-weight: 600;
    padding: 30px 0;
+}
+.main14 {
+   display: block;
+}
+.main14_sp {
+   display: none;
 }
 .main14 > img {
    width: 90%;
@@ -368,6 +482,21 @@ header {
 .main14 .box2 .p2 {
    font-size: 12px;
 }
+.main14_sp li {
+   list-style: none;
+   text-align: left;
+   width: 90%;
+   margin: 2px auto;
+   padding: 10px;
+   background-color: #fef5e0;
+   font-weight: 600;
+}
+.main14_sp i {
+   margin: 10px;
+}
+.main14_sp li:hover {
+   text-decoration: underline;
+}
 .main15 {
    background-image: url(https://isara.life/wp-content/themes/isara_v2/img/bangkokbg.jpg);
    color: white;
@@ -380,26 +509,38 @@ header {
    font-weight: 600;
 }
 .main16 {
-   background-color: rgb(247, 194, 60);
+   /* background-color: rgb(247, 194, 60); */
+   background-color:blue;
+}
+.main16 .title {
+   display: block;
+   /* display: inline-block; */
+   width: 30%;
+   /* ？　バックグラウンドカラーで白い線消えてくれない */
+   background-color: pink;
+   margin-top: 40px;
+   margin-bottom: -30px;
+   margin: 40px auto -30px;
+   position:relative;
+   z-index:3;
 }
 .main16 span {
    color: white;
 }
-
-/* ？　かぶらせるやつまた保留 */
-
 .main16 .container {
    border: solid 2px white;
    padding: 20px;
    margin: 0 40px;
+   position:relative;
+   z-index:1;
 } 
 /* 本家の白丸は写真ぽいからあきらめ */
 .main16 .box {
-   width: 220px;
-   height: 220px;
+   /* width: 220px;
+   height: 220px; */
    margin: 0 auto;
    background-color: white;
-   border-radius: 50%;
+   /* border-radius: 50%; */
 }
 .main16 .box h2 {
    color: orange;
@@ -446,6 +587,21 @@ header {
    margin-bottom: 25px;
    border: none;
 }
+.main19 button {
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+   outline: none;
+   padding: 0;
+   appearance: none;
+   text-decoration: none;
+   background-color: #da6b64;
+   color: white;
+   width: 60%;
+   padding: 15px;
+   border-radius: 30px;
+   font-size: 20px;
+}
 .main20 li {
    list-style: none;
    text-align: left;
@@ -463,15 +619,18 @@ footer {
 footer ul {
    padding: 0;
    width: 100%;
-   /* display: flex; */
+   display: flex;
+   justify-content: center;/*横方向*/
+   align-items:flex-end;/*縦方向*/
    margin: 0 auto;
+   
 }
-footer  li {
+footer li {
    list-style: none;
    background-color: skyblue;
    color: white;
    margin: 5px;
-   display: inline-block;
+   height:20px;
    border-radius: 6px;
 }
 footer a {
@@ -481,4 +640,198 @@ footer a {
 footer a:hover {
    border-bottom: solid 1px blue;
    line-height: 0;
+}
+
+@media(max-width: 768px) {
+   .navbar {
+      display: none;
+   }
+   .sp_navbar {
+      display: block;
+   }
+   .main {
+      padding: 10px 0;
+   }
+   p {
+      font-size: 12px;
+   }
+   h2 {
+      font-size: 18px;
+   }
+   .fw600 {
+      font-weight: 600;
+   }
+   .fs15 {
+      font-size: 15px;
+   }
+   .fs18 {
+      font-size: 18px;
+   }
+   .fs20 {
+      font-size: 20px;
+   }
+   .br_sp {
+      display: block;
+   }
+   .br_pc {
+      display: none;
+   }
+   .main1 {
+      padding-top: 75px;
+      /* レスポンシブのとこでmainでパディング指定しなおしたからもっかい指定 */
+      height: 312px;
+      width:100%;
+      background-image: url(https://isara.life/wp-content/themes/isara_v2/img/mainsp.jpg);
+   }
+   .main2 .p2 {
+      padding: 15px 10px 40px;
+   }
+   .main3 {
+      padding-bottom: 80px;
+   }
+   .main4 {
+      padding-top: 40px;
+   }
+   .main4_box ul{
+      justify-content: center;
+   }
+   .main4_box ul li {
+      width: 115px;
+      height: 82px;
+   }
+   .main4_box ul li img {
+      height: 30px;
+      width: auto;
+      max-width: 100%;
+      max-height: 100%;
+   }
+   .main4_box ul li p {
+      font-size: 10px;
+      margin: 0 0 10px;
+   }
+   .main5_box {
+      width: 80%;
+      padding: 5px 40px;
+   }
+   .main5_box div {
+      margin: 10px auto;
+   }
+   .main7 ul {
+      width: 265px;
+      padding: 0;
+      margin: 20px auto;
+   }
+   .main7 li {
+      padding: 5px;
+      justify-content: center;
+      text-align: center;
+   }
+   .main7 img {
+      width: 120px;
+      justify-content: center;
+   }
+   .main8 img {
+      width: 345px;
+      height: 120px;
+   }
+   .main9 .container {
+      width: 98%;
+      margin: 10px auto;
+   }
+   .main9 .box {
+      padding: 20px 0  5px 0;
+   }
+   .main9 img {
+      width: 120px;
+   }
+   .main11 .img {
+      width: 100px;
+      height: 100px;
+   }
+   .main12 .box {
+      width: 98%;
+      margin: 10px auto;
+   }
+   .main12 li {
+      font-size: 14px;
+   }
+   .main14 {
+      display: none;
+   }
+   .main14_sp {
+      display: block;
+   }
+   .main15 .container {
+      margin: 20px;
+   }
+   .main15  h2 {
+      text-align: center;
+   }
+   .main15 li {
+      font-size: 12px;
+   }
+   .main16 .container {
+      width: 80%;
+      margin: 0 auto;
+   }
+   .main16 .title {
+      width: 80%;
+   }
+   .main16 .box {
+      display: flex;
+      width: 80%;
+      height: auto;
+      background-color: rgb(247, 194, 60);
+   }
+   .main16 .box h2 {
+      display: block;
+      color: #ebb94d;
+      background-color: white;
+      /*？ ここのwidth指定反映されない */
+      /* pのwidthを指定してできた */
+      flex-basis: 60px;
+      width: 60px; 
+      height: 60px;
+      font-size: 12px;
+      border-radius: 50%;
+      line-height: 60px;
+   }
+   .main16 .box p {
+      width: calc(100% - 60px);
+      display:block;
+      color: white;
+      text-align: left;
+   }
+   .main18 img {
+      width: 98%;
+   }
+   .main18 ul {
+      padding: 0;
+   }
+   .main18 li {
+      font-size: 12px;
+      list-style-position: inside;
+   }
+   .main19 ul {
+      padding: 0 10px;
+   }
+   .main19 input {
+      width: 98%;
+      margin: 10px auto;
+   }
+   .main19 textarea {
+      width: 98%;
+      margin: 10px auto;
+   }
+   .main19 button {
+      width: 98%;
+      margin: 10px auto;
+   }
+   .main20 ul {
+      padding: 0;
+   }
+   .main20 li {
+      width: 90%;
+      margin: 5px auto;
+   }
 }
